@@ -8,8 +8,14 @@ from database import answer_database
 LATENCY = 3
 
 # Get driver
-def init_driver():
-    driver = webdriver.Chrome("./chromedriver")
+def init_driver(mode):
+    if mode == "linux":
+        driver = webdriver.Chrome("./chromedriver_linux")
+    elif mode == "windows":
+        driver = webdriver.Chrome("./chromedriver_windows.exe")
+    elif mode == "mac":
+        driver = webdriver.Chrome("./chromedriver_mac")
+
     print("[+] Loaded Chrome webdriver")
     return driver
 
@@ -77,7 +83,7 @@ def solve_test(driver, idx):
     
     # Solve question with answer
     for num in range(len(answer)):
-        if answer[num] is -1:
+        if answer[num] == -1:
             continue
         driver.find_element_by_id(f"ans_{num+1}_{answer[num]}").click()
     
