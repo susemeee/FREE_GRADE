@@ -35,4 +35,14 @@ FREE_GRADE
 
 ```python ./main.py```
 
+```
+ID : xxxxxxxx
+PW : xxxxxxxx
+OS?
+1 : Linux
+2 : Windows
+3 : MacOS
+> 2
+```
+
 6. 이수증을 출력한다
