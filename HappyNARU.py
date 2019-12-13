@@ -98,8 +98,19 @@ def auto_solve_test(driver, idxs):
 
 
 def get_cert(driver):
+    # Accessing index page
     print("[*] Accessing certification issuing page... ", end='')
-    driver.get("http://cafm.korea.ac.kr/archibus/se_cerper1.jsp?sesch_id=12&seem_id=91100")
-    driver.execute_script("poppop('win', 'se_certificate.jsp?sesch_id=12&seem_id=91100&emper=', 200, 200, 950, 950, 0, 0, 0, 'yes', 'yes')")
+    driver.get("http://cafm.korea.ac.kr/archibus/se_connect_chk.jsp?se_chk=se")
+    sleep(LATENCY)
+    driver.execute_script("sel_fnc()")
+    sleep(LATENCY)
+    driver.switch_to.frame("frame1")
+
+    # Find button and click
+    driver.find_element_by_xpath("//*[@id=\"data_table_header\"]/tbody/tr[2]/td[9]/input").click()
+    sleep(LATENCY*0.3)
     driver.switch_to.window(driver.window_handles[-1])
+
+    # Get cert
+    driver.find_element_by_xpath("//*[@id=\"nav\"]/input[1]").click()
     print("Done.")
