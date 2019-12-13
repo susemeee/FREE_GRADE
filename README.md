@@ -4,9 +4,9 @@ FREE_GRADE
 Warning : 쓰면 안되는 사람들
 
 * 위험요소 있는 연구실에서 일하는 사람들
-> 그냥 교육 들으세요
 * 대학원생
 * 기타 위험요소를 포함한 연구참여자
+> 그냥 교육 들으세요
 
 ## 사용법
 0. [Python을 설치](https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe)한다
