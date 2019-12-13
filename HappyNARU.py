@@ -32,7 +32,7 @@ def enter_education(driver, ID, PW):
     driver.switch_to.window(driver.window_handles[-1])
 
     # Select Identification
-    driver.find_element_by_xpath("//input[@value='선택']").click();
+    driver.execute_script("sel_fnc()")
 
     # Finally enter education page
     sleep(LATENCY)
@@ -98,7 +98,7 @@ def auto_solve_test(driver, idxs):
 
 
 def get_cert(driver):
-    print("[*] Accessing certification issuing page", end='')
+    print("[*] Accessing certification issuing page... ", end='')
     driver.get("http://cafm.korea.ac.kr/archibus/se_cerper1.jsp?sesch_id=12&seem_id=91100")
     driver.execute_script("poppop('win', 'se_certificate.jsp?sesch_id=12&seem_id=91100&emper=', 200, 200, 950, 950, 0, 0, 0, 'yes', 'yes')")
     driver.switch_to.window(driver.window_handles[-1])
