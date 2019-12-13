@@ -2,6 +2,8 @@ FREE_GRADE
 =====================
 
 ## 사용법
+0. [Python을 설치](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64-webinstall.exe)한다
+
 1. Chrome을 최신버전(79.0)으로 업데이트 한다
 
 2. 다음과 같이 라이브러리를 설치한다
