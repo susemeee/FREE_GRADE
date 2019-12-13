@@ -2,7 +2,7 @@ FREE_GRADE
 =====================
 
 ## 사용법
-0. [Python을 설치](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64-webinstall.exe)한다
+0. [Python을 설치](https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe)한다
 > Add Python3.x to PATH 는 꼭 클릭한다.
 
 1. Chrome을 [최신버전(79.0)](https://www.google.com/chrome/)으로 업데이트 한다
