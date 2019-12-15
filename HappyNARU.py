@@ -1,8 +1,12 @@
+import math
+
+from time import time
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-from database import answer_database
+from database import answer_database, time_database
+
 
 # Network Latency
 LATENCY = 3
@@ -65,6 +69,39 @@ def auto_enroll(driver, idxs):
     for idx in idxs:
         enroll(driver, idx)
     print("[+] Enrolled.")
+
+def build_ajax_payload(idx, totalTime):
+    return '''$.ajax({
+			url: "sub_entry.jsp",
+			data: {"c_type":"save" ,''' + \
+            f'''"chap_type": "{str(idx).zfill(2)}" ,"tstart": {math.ceil(time())}, "tend": {math.ceil(time())+totalTime}, "ct": {totalTime}''' + \
+            '''
+            },
+			type:'post',
+			dataType:'json',
+			success:function(data){}
+            });
+            '''
+
+# Doing ajax is enough.
+def take_class(driver, idx):
+    print(f"[+] Defeating class #{idx}... ")
+    driver.get(f"http://cafm.korea.ac.kr/archibus/safety_edu/test/{str(idx).zfill(2)}/index.jsp")
+    sleep(LATENCY)
+    for number in range(len(time_database[idx])):
+        payload = build_ajax_payload(number+1, time_database[idx][number])
+        driver.execute_script(payload)
+        sleep(LATENCY * 0.3)
+        print(f"[+] Defeated Subclass #{number+1}")
+    print(f"[+] Done.")
+
+
+def auto_take_class(driver, idxs):
+    print(f"[*] Automatically taking classes of class #{idxs}...")
+    for idx in idxs:
+        take_class(driver, idx)
+    print("[+] All taken.")
+
 
 
 def solve_test(driver, idx):

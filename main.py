@@ -15,5 +15,6 @@ driver = HappyNARU.init_driver(mode)
 
 HappyNARU.enter_education(driver, id, pw)
 HappyNARU.auto_enroll(driver, things_to_take)
+HappyNARU.auto_take_class(driver, things_to_take)
 HappyNARU.auto_solve_test(driver, things_to_take)
 HappyNARU.get_cert(driver)
