@@ -14,11 +14,11 @@ LATENCY = 3
 # Get driver
 def init_driver(mode):
     if mode == "linux":
-        driver = webdriver.Chrome("./chromedriver_linux")
+        driver = webdriver.Chrome("./driver/chromedriver_linux")
     elif mode == "windows":
-        driver = webdriver.Chrome("./chromedriver_windows.exe")
+        driver = webdriver.Chrome("./driver/chromedriver_win.exe")
     elif mode == "mac":
-        driver = webdriver.Chrome("./chromedriver_mac")
+        driver = webdriver.Chrome("./driver/chromedriver_mac")
 
     print("[+] Loaded Chrome webdriver")
     return driver
@@ -86,7 +86,7 @@ def build_ajax_payload(idx, totalTime):
 # Doing ajax is enough.
 def take_class(driver, idx):
     print(f"[+] Defeating class #{idx}... ")
-    driver.get(f"http://cafm.korea.ac.kr/archibus/safety_edu/test/{str(idx).zfill(2)}/index.jsp")
+    driver.get(f"http://cafm.korea.ac.kr/archibus/safety_edu/2020/{str(idx).zfill(2)}/index.jsp")
     sleep(LATENCY)
     for number in range(len(time_database[idx])):
         payload = build_ajax_payload(number+1, time_database[idx][number])
