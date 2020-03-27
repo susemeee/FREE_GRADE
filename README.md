@@ -15,8 +15,8 @@ FREE_GRADE
 0. [Python을 설치](https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe)한다
 > Add Python3.x to PATH 는 꼭 클릭한다.
 
-1. Chrome을 [최신버전(79.0)](https://www.google.com/chrome/)으로 업데이트 한다
-> chrome://version 을 확인하였을 때 79.0.~~~ 이 나오면 성공
+1. Chrome을 [최신버전(80.0)](https://www.google.com/chrome/)으로 업데이트 한다
+> chrome://version 을 확인하였을 때 80.0.~~~ 이 나오면 성공
 
 2. 해당 repository를 git으로 clone 또는 [download](https://github.com/PngWnA/FREE_GRADE/archive/master.zip)한다
 
