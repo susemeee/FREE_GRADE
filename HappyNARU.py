@@ -35,7 +35,7 @@ def enter_education(driver, ID, PW):
     # Enter education
     print("[*] Accessing education page... ", end='') 
     sleep(LATENCY)
-    driver.execute_script("moveComponent('http://infodepot.korea.ac.kr', '2', '/common/FMSLogin3.jsp', '86', '3000', 'S')")
+    driver.execute_script("moveComponent('http://infodepot.korea.ac.kr', '3', '/common/FMSLogin3.jsp?url=archibus', '86', '4960', 'S')")
 
     # Switch to new tab
     sleep(LATENCY)
