@@ -44,7 +44,7 @@ def enter_education(driver, ID, PW):
     driver.switch_to.window(driver.window_handles[-1])
 
     # Select Identification
-    sleep(LATENCY)
+    sleep(LATENCY*2)
     driver.execute_script("sel_fnc()")
 
     # Finally enter education page
