@@ -27,10 +27,12 @@ def enter_education(driver, ID, PW):
     # Log in portal
     print("[*] Logging in portal... ", end='')
     driver.get("https://portal.korea.ac.kr")
+    sleep(LATENCY * 2)
     driver.find_element_by_name("id").send_keys(ID)
     driver.find_element_by_name("pw").send_keys(PW)
-    driver.find_element_by_xpath("//*[@id=\"loginform\"]/input").click()
+    driver.find_element_by_xpath("//*[@id=\"loginsubmit\"]").click()
     print("Done.")
+    
 
     # Enter education
     print("[*] Accessing education page... ", end='') 
@@ -42,6 +44,7 @@ def enter_education(driver, ID, PW):
     driver.switch_to.window(driver.window_handles[-1])
 
     # Select Identification
+    sleep(LATENCY)
     driver.execute_script("sel_fnc()")
 
     # Finally enter education page
